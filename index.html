@@ -1,0 +1,180 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <link href="./static/css/tailwind.css" rel="stylesheet">
+    <link href="./static/css/paper.css" rel="stylesheet">
+
+    <link href="https://cdn.jsdelivr.net/npm/tailwindcss@2.2.19/dist/tailwind.min.css" rel="stylesheet">
+    <link href="https://fonts.googleapis.com/css2?family=Times+New+Roman&display=swap" rel="stylesheet">
+    <script src="https://unpkg.com/hyperscript.org@0.9.12"></script>
+
+    <title>Lab Report Format Maker</title>
+</head>
+
+<style>
+    body {
+        font-family: 'Times New Roman', serif;
+        margin: 0;
+        padding: 0;
+    }
+
+    h1,
+    h2,
+    h3,
+    h4,
+    h5,
+    h6 {
+        font-family: 'Times New Roman', serif;
+    }
+</style>
+
+
+
+
+<body class="bg-gray-100 container mx-auto">
+    <div class="grid grid-cols-1 md:gird-cols-1 md:gap-1 lg:grid-cols-2 lg:gap-1">
+        <div class="max-w p-8 bg-white rounded-lg shadow-md mt-8" id="form-and-div">
+
+            <form hx-boost="false" method='GET' action="coverpage.php">
+                <div class="mt-8">
+                    <h3 class="text-2xl">Lab Report Format Maker</h3>
+                    <h4 class="text-xl font-bold">Ta Daaa</h4>
+                </div>
+
+                <div class="grid grid-cols-2 gap-x-8 mt-16">
+                    <div class="text-left">
+                        <p class="font-bold">Submitted By:</p>
+                        <p class="mb-4">
+                            Name:
+                            <input type="text" name="name" required
+                                class="block border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                                _="on input or change put my.value into #submitted-by-name"
+                                >
+                        </p>
+                        <p class="mb-4">
+                            Semester:
+                            <input type="text" name="semester" required
+                                class="block border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                                _="on input or change put my.value into #submitted-by-semester"
+                                >
+                        </p>
+                        <p class="mb-4">
+                            Program:
+                            <input type="text" name="program" required
+                                class="block border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none 
+                                focus:border-blue-500"
+                                _="on input or change put my.value into #submitted-by-program"
+                                
+                                >
+                        </p>
+                        <p class="mb-4">
+                            Registration No:
+                            <input type="text" name="registernumber" required
+                                class="block border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                                
+                                _="on input or change put my.value into #submitted-by-registernumber"
+                                
+                                >
+                        </p>
+                    </div>
+
+                    <div class="text-right">
+                        <p class="font-bold">Submitted To:</p>
+                        <p class="mb-4">
+                            <input type="text" name="teachersname" required
+                                class="block border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                                _="on input or change put my.value into #submitted-to-name"
+                                >
+                        </p>
+                        <p class="mb-4">Lecturer/Faculty Member</p>
+                        <p class="mb-4">
+                            <input type="text" name="department" required
+                                class="block border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                                _="on input or change put my.value into #submitted-to-department"
+                                
+                                >
+                        </p>
+                        <p class="mb-4">Subject</p>
+                        <p class="mb-4">
+                            <input type="text" name="subject" required
+                                class="block border border-gray-300 rounded-lg px-4 py-2 w-full focus:outline-none focus:border-blue-500"
+                                _="on input or change put my.value into #subject"
+                                
+                                >
+                        </p>
+                    </div>
+
+
+                </div>
+                <button type="submit"
+                    class="mt-8 bg-blue-500 hover:bg-blue-600 text-white font-bold py-2 px-4 rounded">Submit</button>
+            </form>
+        </div>
+
+        <div class="max-w-2xl p-8 bg-white rounded-lg shadow-md mt-8" id="form-and-div">
+            <img src="./static/images/reliance.png" alt="Reliance College" class="w-40 mx-auto">
+            <div class="mt-8">
+                <h1 class="text-4xl font-bold text-center">RELIANCE COLLEGE</h1>
+                <h2 class="text-lg font-bold text-center">Chabahil, Kathmandu</h2>
+                <p class="text-center">[Affiliated to TU]</p>
+            </div>
+            <div class="flex justify-center items-center mt-8">
+                <img src="./static/images/lines.svg" alt="Middle Lines" class="mx-auto" width="" height="">
+            </div>
+
+            <div id="vspace"></div>
+
+            <div class="mt-8 text-center">
+                <h3 class="text-2xl">Lab Reports of</h3>
+                <h4 class="text-xl font-bold" id="subject">
+                 
+                    
+                </h4>
+            </div>
+
+            <div id="vspace"></div>
+
+            <div class="grid grid-cols-2 gap-x-8 mt-16">
+                <div class="text-left">
+                    <p class="font-bold">Submitted By:</p>
+                    <p>Name:<span id="submitted-by-name"> </span>
+                        
+                    </p>
+                    <p>Semester:
+                        <span id="submitted-by-semester"> </span>
+                    </p>
+                    <p>Program:
+                        <span id="submitted-by-program"> </span>
+                    </p>
+                    <p>Registration No:
+                       <span id="submitted-by-registernumber"> </span>
+                    </p>
+                </div>
+                <div class="text-right">
+                    <p class="font-bold">Submitted To:</p>
+                    <p>
+                       <span id="submitted-to-name"> </span>
+                    </p>
+                    <p>Lecturer/Faculty Member</p>
+                    <p>
+                        <span id="submitted-to-department"> </span> Department
+                    </p>
+                </div>
+            </div>
+        </div>
+    </div>
+
+
+    <div class="mt-8 text-center">
+        <p class="font-bold">How to Download the PDF:</p>
+        <p>1. Click on the "Print" button in your browser.</p>
+        <p>2. In the print dialog, select "Save as PDF" as the printer option.</p>
+        <p>3. Click the "Save" button to save the PDF to your computer.</p>
+    </div>
+
+</body>
+
+</html>
